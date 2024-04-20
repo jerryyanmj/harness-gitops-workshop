@@ -2,7 +2,7 @@
   "cluster" : {
     "owner" : "cluster-admin@company.com",
     "address" : "https://kubernetes.default.svc",
-    "name" : "dev",
+    "name" : "np-dev",
     "namespace" : "dev"
   },
   "asset_id" : "12345678",
