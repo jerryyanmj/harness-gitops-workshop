@@ -4,11 +4,11 @@ metadata:
   name: podinfo  
 spec:  
   generators:  
-    - git:  
-        repoURL: https://github.com/jerryyanmj/harness-gitops-workshop.git  
-        revision: HEAD  
-        directories:
-        - path: "configs/git-generator-files-discovery/cluster-config/**/config.json"  
+  - git:  
+      repoURL: https://github.com/jerryyanmj/harness-gitops-workshop.git  
+      revision: HEAD  
+      directories:
+      - path: configs/git-generator-files-discovery/cluster-config/**/config.json
   template:  
     metadata:  
       name: '{{cluster.namespace}}-podinfo'  
