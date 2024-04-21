@@ -1,6 +1,6 @@
 {
   "cluster" : {
-    "owner" : "me",
+    "owner" : "jerry",
     "name" : "in-cluster",
     "namespace" : "dev",
     "address" : "https://kubernetes.default.svc"
