@@ -4,14 +4,13 @@ metadata:
   name: podinfo  
 spec:  
   generators:  
-  - git:  
-      repoURL: https://github.com/jerryyanmj/harness-gitops-workshop.git  
-      revision: HEAD  
-      files:
-      - path: "configs/git-generator-files-discovery/cluster-config/**/config.json"
+  - list:
+      elements:
+      - namespace: dev
+      - namespace: prod
   template:  
     metadata:  
-      name: '{{cluster.namespace}}-podinfo'  
+      name: '{{namespace}}-podinfo'  
     spec:  
       project: default  
       source:  
@@ -19,8 +18,8 @@ spec:
         targetRevision: HEAD  
         path: "configs/git-generator-files-discovery/apps/podinfo"  
       destination:  
-        server: '{{cluster.address}}'  
-        namespace: '{{cluster.namespace}}'  
+        server: https://kubernetes.default.svc  
+        namespace: '{{namespace}}'  
       syncPolicy:  
         syncOptions:
         - CreateNamespace=true
