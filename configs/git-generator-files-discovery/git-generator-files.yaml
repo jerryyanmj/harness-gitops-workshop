@@ -11,9 +11,9 @@ spec:
   template:  
     metadata:  
       name: '{{namespace}}-podinfo'
-      #labels:
-      #  harness.io/envRef: '{{namespace}}'
-      #  harness.io/serviceRef: "podinfoservice"
+      labels:
+       harness.io/envRef: '{{namespace}}'
+       harness.io/serviceRef: podinfoservice
     spec:  
       project: default  
       source:  
