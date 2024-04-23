@@ -22,8 +22,13 @@ spec:
         path: "configs/git-generator-files-discovery/apps/podinfo"
       destination:
         #server: https://kubernetes.default.svc
+<<<<<<< HEAD
         name: in-cluster
         namespace: '{{namespace}}'  
+=======
+        name: "in-cluster"
+        namespace: '{{namespace}}'
+>>>>>>> 173a403 (add)
       syncPolicy:
         syncOptions:
         - CreateNamespace=true

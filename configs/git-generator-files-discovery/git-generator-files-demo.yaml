@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1  
+kind: ApplicationSet  
+metadata:  
+  name: podinfo  
+spec:  
+  generators:  
+  - list:
+      elements:
+      - namespace: dev
+      - namespace: prod
+  template:  
+    metadata:  
+      name: '{{namespace}}-podinfo'  
+    spec:  
+      project: default  
+      source:  
+        repoURL: https://github.com/jerryyanmj/harness-gitops-workshop.git  
+        targetRevision: HEAD  
+        path: "configs/git-generator-files-discovery/apps/podinfo"  
+      destination:  
+        server: https://kubernetes.default.svc  
+        namespace: '{{namespace}}'  
+      syncPolicy:  
+        syncOptions:
+        - CreateNamespace=true
