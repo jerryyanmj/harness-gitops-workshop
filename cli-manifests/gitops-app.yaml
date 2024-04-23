@@ -5,7 +5,7 @@ gitops:
   type: application
   application:
     metadata:
-      clusterName: gitops_cluster
+      clusterName: in-cluster
       labels:
         harness.io/serviceRef: ""
         harness.io/envRef: ""
@@ -16,7 +16,7 @@ gitops:
         targetRevision: main
       destination:
         server: https://kubernetes.default.svc
-        namespace: default
+        namespace: argocd
   agentIdentifier: AGENT_NAME
-  clusterIdentifier: gitopscluster
-  repoIdentifier: gitopsrepo
+  clusterIdentifier: incluster
+  repoIdentifier: harnessgitopsworkshop
