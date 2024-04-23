@@ -12,18 +12,18 @@ spec:
     metadata:  
       name: '{{namespace}}-podinfo'
       labels:
-       harness.io/envRef: '{{namespace}}'
-       harness.io/serviceRef: podinfoservice
+        harness.io/envRef: '{{namespace}}'
+        harness.io/serviceRef: podinfoservice
     spec:  
       project: default  
-      source:  
-        repoURL: https://github.com/jerryyanmj/harness-gitops-workshop.git  
+      source:
+        repoURL: https://github.com/jerryyanmj/harness-gitops-workshop.git
         targetRevision: HEAD  
-        path: "configs/git-generator-files-discovery/apps/podinfo"  
+        path: "configs/git-generator-files-discovery/apps/podinfo"
       destination:
         #server: https://kubernetes.default.svc
         name: in-cluster
         namespace: '{{namespace}}'  
-      syncPolicy:  
+      syncPolicy:
         syncOptions:
         - CreateNamespace=true
