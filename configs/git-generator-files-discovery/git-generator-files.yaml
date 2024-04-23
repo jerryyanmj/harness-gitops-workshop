@@ -21,8 +21,8 @@ spec:
         targetRevision: HEAD  
         path: "configs/git-generator-files-discovery/apps/podinfo"  
       destination:
-        #server: https://kubernetes.default.svc
-        name: in-cluster
+        server: https://kubernetes.default.svc
+        #name: in-cluster
         namespace: '{{namespace}}'  
       syncPolicy:  
         syncOptions:
